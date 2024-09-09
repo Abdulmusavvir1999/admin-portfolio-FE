@@ -1,0 +1,74 @@
+<section class="p-4">
+    <div class="flex justify-between items-center pb-2 border-b-2 border-black">
+        <p class="text-4xl font-bold italic">Dashboard</p>
+    </div>
+    <div class="flex flex-wrap gap-8 pt-4">
+        <!-- @for (item of userArray; track $index) {
+        @if (item.role == "super-admin") {
+        <div class="dashboard bg-blue-500 !shadow-blue-300">
+            <div>
+                <img class="w-16" src="New folder/dashboard.svg" alt="">
+                <p>DASHBOARD</p>
+            </div>
+        </div>
+        }
+
+        } -->
+
+
+        <div class="dashboard bg-green-500 !shadow-green-300">
+            <div>
+                <img class="w-16" src="New folder/aboutme.svg" alt="">
+                <p>ABOUT</p>
+            </div>
+            <p class="text-8xl mr-5 font-semibold">1</p>
+        </div>
+
+        <div class="dashboard bg-violet-500 !shadow-violet-300">
+            <div>
+                <img class="w-16" src="New folder/education.svg" alt="">
+                <p>EDUCATION</p>
+            </div>
+            <p class="text-8xl mr-5 font-semibold">{{educationArray.length}}</p>
+
+        </div>
+
+        <div class="dashboard bg-purple-500 !shadow-violet-300">
+            <div>
+                <img class="w-16" src="New folder/experience.svg" alt="">
+                <p>EXPERIENCE</p>
+            </div>
+
+            <p class="text-8xl mr-5 font-semibold">{{experienceArray.length}}</p>
+
+        </div>
+
+        <div class="dashboard bg-red-500 !shadow-red-300">
+            <div>
+                <img class="w-16" src="New folder/skills.svg" alt="">
+                <p>SKILLS</p>
+            </div>
+            <p class="text-8xl mr-5 font-semibold">{{skillArray.length}}</p>
+
+        </div>
+
+        <div class="dashboard bg-amber-500 !shadow-amber-200">
+            <div>
+                <img class="w-16" src="New folder/project.svg" alt="">
+                <p>PROJECT</p>
+            </div>
+            <p class="text-8xl mr-5 font-semibold">{{projectArray.length}}</p>
+
+        </div>
+
+        <div class="dashboard bg-pink-500 !shadow-pink-300">
+            <div>
+                <img class="w-16" src="New folder/users.svg" alt="">
+                <p>USERS</p>
+            </div>
+            <p class="text-8xl mr-5 font-semibold">{{userArray.length}}</p>
+
+        </div>
+
+    </div>
+</section>

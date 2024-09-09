@@ -1,0 +1,51 @@
+<form class="flex flex-col !text-white !italic overflow-auto bg-gray-900 p-7 rounded-lg shadow-lg"
+    [formGroup]="skillForm" (ngSubmit)="skillForm.valid">
+
+    <!-- New Fields -->
+    <!--skillName  -->
+    <div class="flex flex-col gap-4 mb-4">
+        <label class="text-xl font-semibold text-gray-200" for="skillName">SkillName:</label>
+        <input formControlName="skillName" type="text"
+            class="input px-4 py-2 rounded-md placeholder:text-gray-400 bg-gray-800 border border-gray-600"
+            id="skillName" placeholder="SkillName*" />
+    </div>
+
+    <!-- category  -->
+    <div class="flex flex-col gap-4">
+        <label class=" !text-white" for="category">category:</label>
+        <mat-form-field appearance="fill" class="w-full">
+            <mat-label for="category">category</mat-label>
+            <mat-select id="category" formControlName="category">
+                <mat-option value="FrontEnd">Front End</mat-option>
+                <mat-option value="BackEnd">Back End</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <!-- description -->
+    <div class="flex flex-col gap-4 mb-4">
+        <label class="text-xl font-semibold text-gray-200" for="description">Description:</label>
+        <textarea formControlName="description" type="description"
+            class="input px-4 py-2 rounded-md placeholder:text-gray-400 bg-gray-800 border border-gray-600"
+            id="description" placeholder="Description*"></textarea>
+    </div>
+
+    <!-- Submit and Cancel Buttons -->
+    <div class="flex gap-4 self-end mt-6">
+        @if (isEdit === true) {
+        <button (click)="updateSkill()"
+            class="bg-blue-500 text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-600 transition">Update
+        </button>
+        }
+        @else {
+        <button (click)="addSkill()"
+            class="bg-blue-500 text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-600 transition">Add
+        </button>
+        }
+        <button type="button"
+            class="border border-blue-500 text-blue-500 px-6 py-3 rounded-md shadow-md hover:bg-blue-100 transition"
+            matDialogClose="true">
+            Cancel
+        </button>
+    </div>
+</form>

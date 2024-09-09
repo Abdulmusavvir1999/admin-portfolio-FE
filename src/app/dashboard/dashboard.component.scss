@@ -1,0 +1,8 @@
+.dashboard {
+    @apply flex justify-between gap-4 p-4 w-[20rem] h-[10rem] text-white rounded-xl shadow-lg;
+}
+
+.dashboard div {
+    @apply flex flex-col gap-4 font-semibold text-xl;
+
+}

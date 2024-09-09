@@ -1,0 +1,36 @@
+@if (token === null || token === undefined){
+<section>
+    <div class="container flex">
+        <div class="w-full">
+            <form action="#">
+                <h1>Admin Login!</h1>
+                <!-- email -->
+                <label for="email"></label>
+                <input id="email" name="email" type="email" placeholder="email" #email required>
+                <!-- password -->
+                <label for="password"></label>
+                <input id="password" name="password" type="password" placeholder="Password" #password required>
+                <button (click)="login(email.value, password.value)" class="">Log In</button>
+            </form>
+        </div>
+        <div class="w-full">
+            <div class="overlay">
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Admin!</h1>
+                    <p>Access your personalized portfolio dashboard by logging in. Explore your projects, track your
+                        achievements, and stay updated with the latest enhancements. Your creative journey awaits!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+}
+@else {
+<div class="flex flex-col justify-center items-center h-screen">
+    <p class="!text-5xl font-semibold">Your Already Login</p>
+    <p>You Login Again. Go To This Link And Click Logout</p>
+    <a class="text-blue-800 underline" href="http://localhost:4200/">http://localhost:4200/</a>
+</div>
+
+}

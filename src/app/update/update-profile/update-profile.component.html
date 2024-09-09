@@ -1,0 +1,106 @@
+<form class="flex flex-col !text-white !italic overflow-auto bg-gray-900 p-6 rounded-lg shadow-lg"
+    [formGroup]="profileForm" (ngSubmit)="profileForm.valid">
+
+    <!-- name -->
+    <div class="flex flex-col gap-4 mb-4">
+        <label class="text-xl font-semibold text-gray-200" for="name">Name:</label>
+        <input formControlName="name" type="text"
+            class="input px-4 py-2 rounded-md placeholder:text-gray-400 bg-gray-800 border border-gray-600" id="name"
+            placeholder="Name*" />
+    </div>
+
+    <!-- phone -->
+    <div class="flex flex-col gap-4 mb-4">
+        <label class="text-xl font-semibold text-gray-200" for="phone">Phone:</label>
+        <input formControlName="phone" type="text"
+            class="input px-4 py-2 rounded-md placeholder:text-gray-400 bg-gray-800 border border-gray-600" id="phone"
+            placeholder="Phone*" />
+    </div>
+
+    <!-- address -->
+    <div class="flex flex-col gap-4 mb-4">
+        <label class="text-xl font-semibold text-gray-200" for="address">Address:</label>
+        <input formControlName="address" type="text"
+            class="input px-4 py-2 rounded-md placeholder:text-gray-400 bg-gray-800 border border-gray-600" id="address"
+            placeholder="Address*" />
+    </div>
+
+    <!-- birthday -->
+    <div class="flex flex-col gap-4 mb-4">
+        <label class="text-xl font-semibold text-gray-200" for="birthday">Birthday:</label>
+        <input formControlName="birthday" type="date"
+            class="input px-4 py-2 rounded-md placeholder:text-gray-400 bg-gray-800 border border-gray-600"
+            id="birthday" />
+    </div>
+
+    <!-- experience -->
+    <div class="flex flex-col gap-4 mb-4">
+        <label class="text-xl font-semibold text-gray-200" for="experience">Experience:</label>
+        <input formControlName="experience" type="text"
+            class="input px-4 py-2 rounded-md placeholder:text-gray-400 bg-gray-800 border border-gray-600"
+            id="experience" placeholder="Experience*" />
+    </div>
+
+    <!-- email -->
+    <div class="flex flex-col gap-4 mb-4">
+        <label class="text-xl font-semibold text-gray-200" for="email">Email:</label>
+        <input formControlName="email" type="email"
+            class="input px-4 py-2 rounded-md placeholder:text-gray-400 bg-gray-800 border border-gray-600" id="email"
+            placeholder="Email*" />
+    </div>
+
+    <!-- freelance -->
+    <div>
+        <label class="text-xl font-semibold text-gray-200" for="freelance">freelance:</label>
+        <mat-form-field appearance="fill" class="w-full">
+            <mat-label for="freelance">freelance</mat-label>
+            <mat-select id="freelance" formControlName="freelance">
+                <mat-option value="Available">Available</mat-option>
+                <mat-option value="unAvailable">Un Available</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <!-- instagram Link -->
+    <div class="flex flex-col gap-4 mb-4">
+        <label class="text-xl font-semibold text-gray-200" for="Instagram_link">Instagram_link:</label>
+        <input formControlName="instagram_link" type="instagram_link"
+            class="input px-4 py-2 rounded-md placeholder:text-gray-400 bg-gray-800 border border-gray-600"
+            id="instagram_link" placeholder="Instagram_link*" />
+    </div>
+
+    <!-- facebook_link -->
+    <div class="flex flex-col gap-4 mb-4">
+        <label class="text-xl font-semibold text-gray-200" for="facebook_link">Facebook_link:</label>
+        <input formControlName="facebook_link" type="facebook_link"
+            class="input px-4 py-2 rounded-md placeholder:text-gray-400 bg-gray-800 border border-gray-600"
+            id="facebook_link" placeholder="Facebook_link*" />
+    </div>
+    <!-- x_link -->
+    <div class="flex flex-col gap-4 mb-4">
+        <label class="text-xl font-semibold text-gray-200" for="x_link">X_link:</label>
+        <input formControlName="x_link" type="x_link"
+            class="input px-4 py-2 rounded-md placeholder:text-gray-400 bg-gray-800 border border-gray-600" id="x_link"
+            placeholder="X_link*" />
+    </div>
+
+    <!-- linkedin_link -->
+    <div class="flex flex-col gap-4 mb-4">
+        <label class="text-xl font-semibold text-gray-200" for="linkedin_link">Linkedin_link:</label>
+        <input formControlName="linkedin_link" type="linkedin_link"
+            class="input px-4 py-2 rounded-md placeholder:text-gray-400 bg-gray-800 border border-gray-600"
+            id="linkedin_link" placeholder="Linkedin_link*" />
+    </div>
+
+    <!-- Submit and Cancel Buttons -->
+    <div class="flex gap-4 self-end mt-6">
+        <button (click)="updateAbout()" type="submit"
+            class="bg-blue-500 text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-600 transition">Update
+        </button>
+        <button type="button"
+            class="border border-blue-500 text-blue-500 px-6 py-3 rounded-md shadow-md hover:bg-blue-100 transition"
+            matDialogClose="true">
+            Cancel
+        </button>
+    </div>
+</form>

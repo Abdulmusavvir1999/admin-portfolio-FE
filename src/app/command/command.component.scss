@@ -1,0 +1,28 @@
+.table-container {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+}
+
+/* Customizing the scrollbar track (the part the thumb slides along) */
+::-webkit-scrollbar-track {
+    background: #2918ad;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #528af1;
+    border-radius: 10px;
+    border: 2px solid #528af153;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1f6dff93;
+}

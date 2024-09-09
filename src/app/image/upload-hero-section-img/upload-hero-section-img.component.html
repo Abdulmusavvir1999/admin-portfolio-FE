@@ -1,0 +1,24 @@
+<form class="flex flex-col !text-white !italic overflow-auto bg-gray-900 p-6 rounded-lg shadow-lg"
+    [formGroup]="projectForm" (ngSubmit)="projectForm.valid">
+
+
+    <!-- hero section -->
+    <div class="flex flex-col gap-4 mb-4">
+        <label class="text-xl font-semibold text-gray-200" for="hero_section_pic">Hero_section_pic:</label>
+        <input formControlName="hero_section_pic" type="file" (change)="FileSelected($event)"
+            class="input px-4 py-2 rounded-md placeholder:text-gray-400 bg-gray-800 border border-gray-600"
+            id="hero_section_pic" placeholder="Hero_section_pic*" />
+    </div>
+
+    <!-- Submit and Cancel Buttons -->
+    <div class="flex gap-4 self-end mt-6">
+        <button (click)="updateProject()" type="submit"
+            class="bg-blue-500 text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-600 transition">Update-HeroSection
+        </button>
+        <button type="button"
+            class="border border-blue-500 text-blue-500 px-6 py-3 rounded-md shadow-md hover:bg-blue-100 transition"
+            matDialogClose="true">
+            Cancel
+        </button>
+    </div>
+</form>

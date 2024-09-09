@@ -1,0 +1,165 @@
+@if (token === undefined || token === null) {
+<div class="flex flex-col justify-center items-center h-screen gap-4">
+    <p class="text-5xl font-semibold">Go To Login</p>
+    <a class="text-blue-700 underline" href="http://localhost:4200/login">http://localhost:4200/login</a>
+</div>
+}
+@else {
+<main class="flex">
+    <header class="fixed top-0 left-0">
+        <!-- <div><a class="scroll-down" href="#"></a></div> -->
+
+        <nav>
+            <p class="text-[#0bceaf] text-3xl font-semibold mb-2 p-2">Portfolio</p>
+            <!-- nav-bar -->
+            <div class="profile flex items-center gap-4 py-4 px-6">
+                @for (item of aboutArray; track $index) {
+                <img class="w-28 h-28 rounded-full" src="{{this.baseUrl}}{{item.about_me_pic}}" alt="">
+                }
+                @for (item of userArray; track $index) {
+                <div class="flex flex-col gap-1">
+                    <p class="text-white text-lg font-semibold">Abdul Musavvir</p>
+                    <p class="bg-[#d1ffe4] text-[#0bceaf] text-lg text-center p-1 font-semibold rounded-lg">
+                        {{item.role}}</p>
+                </div>
+                }
+            </div>
+            <hr>
+            <!-- lab view -->
+            <ul class="laptop-nav flex flex-col gap-4 py-4 px-6">
+                <li (click)="changePage('dashboard')"> <img class="w-10" src="New folder/dashboard.svg" alt="">
+                    <a>DASHBOARD</a>
+                </li>
+                @for (item of userArray; track $index) {
+                @if (item.about === "access") {
+                <li (click)="changePage('about')"> <img class="w-10" src="New folder/aboutme.svg" alt="">
+                    <a>ABOUT</a>
+                </li>
+                }
+                @if (item.education_experience === "access") {
+                <li (click)="changePage('quality')"> <img class="w-10" src="New folder/educationa&experience.svg"
+                        alt="">
+                    <a>EDUCATION & EXPERIENCE</a>
+                </li>
+                }
+                @if (item.skills === "access") {
+                <li (click)="changePage('skills')"> <img class="w-10" src="New folder/skills.svg" alt="">
+                    <a>SKILLS</a>
+                </li>
+                }
+                @if (item.project === "access") {
+                <li (click)="changePage('project')"> <img class="w-10" src="New folder/project.svg" alt="">
+                    <a>PROJECT</a>
+                </li>
+                }
+                @if (item.users === "access") {
+                <li (click)="changePage('users')"> <img class="w-10" src="New folder/users.svg" alt="">
+                    <a>USERS</a>
+                </li>
+                }
+                @if (item.command === "access") {
+                <li (click)="changePage('command')"> <img class="w-10" src="New folder/command.svg" alt="">
+                    <a>COMMAND</a>
+                </li>
+                }
+                }
+
+
+
+                <li (click)="logOut()"> <img class="w-10" src="New folder/logout.svg" alt=""> <a>LOG OUT</a>
+                </li>
+            </ul>
+
+            <!-- mobile-view -->
+            <ul class="main-hamburger">
+                <li class="sub-hamburger">
+                    <label class="three-line cursor-pointer" for="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                    <input class="input-mobile-hamburger" type="checkbox" id="hamburger">
+                    <ul class="down-bar-hamburger">
+
+                        <li class="hamburger-mobile" (click)="changePage('dashboard')"> <img class="w-10"
+                                src="New folder/dashboard.svg" alt="">
+                            <a>DASHBOARD</a>
+                        </li>
+                        @for (item of userArray; track $index) {
+                        @if (item.about === "access") {
+                        <li class="hamburger-mobile" (click)="changePage('about')"> <img class="w-10"
+                                src="New folder/aboutme.svg" alt="">
+                            <a>ABOUT</a>
+                        </li>
+                        }
+                        @if (item.education_experience === "access") {
+                        <li class="hamburger-mobile" (click)="changePage('quality')"> <img class="w-10"
+                                src="New folder/educationa&experience.svg" alt="">
+                            <a>EDUCATION & EXPERIENCE</a>
+                        </li>
+                        }
+                        @if (item.skills === "access") {
+                        <li class="hamburger-mobile" (click)="changePage('skills')"> <img class="w-10"
+                                src="New folder/skills.svg" alt="">
+                            <a>SKILLS</a>
+                        </li>
+                        }
+                        @if (item.project === "access") {
+                        <li class="hamburger-mobile" (click)="changePage('project')"> <img class="w-10"
+                                src="New folder/project.svg" alt="">
+                            <a>PROJECT</a>
+                        </li>
+                        }
+                        @if (item.users === "access") {
+                        <li class="hamburger-mobile" (click)="changePage('users')"> <img class="w-10"
+                                src="New folder/users.svg" alt="">
+                            <a>USERS</a>
+                        </li>
+                        }
+                        @if (item.command === "access") {
+                        <li class="hamburger-mobile" (click)="changePage('command')"> <img class="w-10"
+                                src="New folder/command.svg" alt="">
+                            <a>COMMAND</a>
+                        </li>
+                        }
+                        }
+
+
+
+                        <li class="hamburger-mobile" (click)="logOut()"> <img class="w-10" src="New folder/logout.svg"
+                                alt=""> <a>LOG OUT</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <section class="page ml-[24rem] w-full h-screen overflow-x-auto">
+        @if (page === 'dashboard') {
+        <app-dashboard></app-dashboard>
+        }
+        @if (page === 'about') {
+        <app-about></app-about>
+        }
+        @if (page === 'quality') {
+        <app-education-experience></app-education-experience>
+        }
+        @if (page === 'skills') {
+        <app-skills></app-skills>
+        }
+        @if (page === 'project') {
+        <app-project></app-project>
+        }
+        @if (page === 'users') {
+        <app-users></app-users>
+        }
+        @if (page === 'command') {
+        <app-command></app-command>
+        }
+    </section>
+
+
+</main>
+}

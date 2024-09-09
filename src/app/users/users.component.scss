@@ -1,0 +1,25 @@
+th,
+td {
+    @apply p-4 border border-green-100 text-center text-xl;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-green-200;
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-gradient-to-r from-green-400 to-blue-500;
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00b959;
+}

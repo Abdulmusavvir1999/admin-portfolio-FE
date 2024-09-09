@@ -1,0 +1,130 @@
+/* General Styles */
+section {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(145deg, #0bceaf, #0bceae3a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    margin: 0;
+}
+
+p {
+    font-size: 14px;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+button {
+    border-radius: 20px;
+    background-color: #0bceaf;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    padding-block: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    margin-top: 0.5rem;
+    width: 100%;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+input {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 9999px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+input:focus,
+button:focus {
+    outline: 4px double rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+/* Container Styles */
+.container {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+}
+
+/* Overlay Styles */
+.overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(145deg, #ffffff83, #0bceaf);
+    color: black;
+    font-size: large;
+    height: 100%;
+    padding: 1rem;
+    /* Add padding to prevent content from touching edges */
+}
+
+/* Responsive Design */
+@media (max-width: 800px) {
+
+    .container {
+        width: 90%;
+        flex-direction: column-reverse;
+    }
+
+    input {
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+        /* Adjust font size for smaller screens */
+    }
+
+    input {
+        font-size: 18px;
+        /* Further increase font size for readability */
+    }
+
+    button {
+        font-size: 16px;
+        /* Adjust button font size */
+    }
+}
+
+@media (max-width: 319px) {
+    .overlay {
+        display: none;
+    }
+}

@@ -1,0 +1,63 @@
+/* Custom table styles */
+.table-container {
+    @apply overflow-x-auto mx-4 my-4;
+}
+
+/* Row Styling */
+.table-row:nth-child(odd) {
+    @apply bg-gray-100;
+}
+
+.table-row:nth-child(even) {
+    @apply bg-gray-200;
+}
+
+.table {
+    @apply bg-green-50 rounded-lg shadow-md border border-gray-200;
+}
+
+.table-header {
+    @apply bg-green-400 text-white;
+}
+
+.table-header th {
+    @apply py-3 px-4 text-nowrap text-left font-semibold;
+}
+
+.table-row {
+    @apply hover:opacity-70;
+}
+
+.table-cell {
+    @apply py-3 px-4;
+}
+
+.table-action-icons img {
+    @apply w-6 h-6 cursor-pointer;
+}
+
+.table-action-icons {
+    @apply flex flex-wrap justify-start gap-4;
+}
+
+/* Customizing the scrollbar track (the part the thumb slides along) */
+::-webkit-scrollbar-track {
+    background: #c2ffd1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: #00b959;
+    border-radius: 10px;
+    border: 2px solid #00b959;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00b959;
+}

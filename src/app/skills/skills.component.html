@@ -1,0 +1,39 @@
+<section class="pb-4 p-2 min-w-full" id="users">
+    <div class="flex items-center flex-wrap justify-between px-4 overflow-x-auto">
+        <p class="text-4xl font-bold italic">Skills</p>
+        <button (click)="openAddSkillDialog()"
+            class="text-lg text-green-500 border-2 border-green-500 py-2 px-8 ml-8 rounded-lg font-semibold">Add
+            Skill</button>
+    </div>
+
+    <div class="table-container">
+        <table class="table min-w-full">
+            <thead class="table-header">
+                <tr>
+                    <th>Skill Name</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>ACTION</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @for (item of skillArray; track $index) {
+                <tr class="table-row">
+                    <td class="table-cell">{{item.skillName}}</td>
+                    <td class="table-cell">{{item.category}}</td>
+                    <td class="table-cell">{{item.description}}</td>
+                    <td class="table-cell table-action-icons">
+                        <div class="flex gap-6 justify-between p-4 text-nowrap">
+                            <button (click)="openEditSkillDialog(item)"
+                                class="text-lg font-semibold py-2 px-4 text-teal-700 bg-teal-200 rounded-lg hover:bg-teal-300 transition duration-200">Edit</button>
+                            <button (click)="openDeleteSkillDialog(item.skill_id)"
+                                class="text-lg font-semibold py-2 px-4 text-red-700 bg-red-200 rounded-lg hover:bg-red-300 transition duration-200">Delete</button>
+                        </div>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>

@@ -1,0 +1,45 @@
+<section class="m-4 bg-white max-w-max rounded-lg shadow-md overflow-x-auto">
+    <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse min-w-full">
+            <thead>
+                <tr class="bg-blue-600 text-white">
+                    <th class="py-3 px-4 border-b">Id</th>
+                    <th class="py-3 px-4 border-b">Name</th>
+                    <th class="py-3 px-4 border-b">Email</th>
+                    <th class="py-3 px-4 border-b">Subject</th>
+                    <th class="py-3 px-4 border-b">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Assume commandArray is available here -->
+                @for (item of commandArray; track $index) {
+                <tr class="border-b hover:bg-gray-100 transition-colors duration-200">
+                    <td class="py-2 px-4">{{item.command_id}}</td>
+                    <td class="py-2 px-4 text-nowrap">{{item.your_name}}</td>
+                    <td class="py-2 px-4">{{item.your_email}}</td>
+                    <td class="py-2 px-4">{{item.subject}}</td>
+                    <td class="py-2 px-4">
+                        <button (click)="openDeleteCommandDialog(item.command_id)"
+                            class="text-lg font-semibold py-2 px-4 text-white bg-red-600 rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition duration-200">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5" class="px-4 bg-gray-200 text-sm font-semibold">
+                        Message
+                    </td>
+
+                </tr>
+                <tr>
+                    <td colspan="5" class="py-2 px-4 bg-gray-200 text-sm">
+                        {{item.message}}
+                    </td>
+
+                </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</section>

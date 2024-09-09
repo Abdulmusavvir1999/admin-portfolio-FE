@@ -1,0 +1,114 @@
+<form class="flex flex-col !text-white !italic overflow-auto bg-gray-900 p-7 rounded-lg shadow-lg"
+    [formGroup]="userForm" (ngSubmit)="userForm.valid && addOrUpdate()">
+
+    <!--email  -->
+    <div class="flex flex-col gap-4 mb-4">
+        <label class="text-xl font-semibold text-gray-200" for="email">Email:</label>
+        <input formControlName="email" type="text"
+            class="input px-4 py-2 rounded-md placeholder:text-gray-400 bg-gray-800 border border-gray-600" id="email"
+            placeholder="Email*" />
+    </div>
+
+    @if (isEdit === false) {
+    <!--password  -->
+    <div class="flex flex-col gap-4 mb-4">
+        <label class="text-xl font-semibold text-gray-200" for="password">Password:</label>
+        <input formControlName="password" type="text"
+            class="input px-4 py-2 rounded-md placeholder:text-gray-400 bg-gray-800 border border-gray-600"
+            id="password" placeholder="Password*" />
+    </div>
+    }
+
+    <!-- role  -->
+    <!-- <div class="flex flex-col gap-4 mb-4">
+        <label class="text-xl font-semibold text-gray-200" for="role">Role:</label>
+        <input formControlName="role" type="text" value="Admin" placeholder="Admin"
+            class="input px-4 py-2 rounded-md placeholder:text-gray-400 bg-gray-800 border border-gray-600" id="role" />
+
+    </div> -->
+
+    <!-- about  -->
+    <div class="flex flex-col gap-4">
+        <label class=" !text-white" for="about">about:</label>
+        <mat-form-field appearance="fill" class="w-full">
+            <mat-label for="about">about</mat-label>
+            <mat-select id="about" formControlName="about">
+                <mat-option value="access">Access </mat-option>
+                <mat-option value="denied">denied</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <!-- education_experience  -->
+    <div class="flex flex-col gap-4">
+        <label class=" !text-white" for="education_experience">education_experience:</label>
+        <mat-form-field appearance="fill" class="w-full">
+            <mat-label for="education_experience">education_experience</mat-label>
+            <mat-select id="education_experience" formControlName="education_experience">
+                <mat-option value="access">Access </mat-option>
+                <mat-option value="denied">Denied</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <!-- skills  -->
+    <div class="flex flex-col gap-4">
+        <label class=" !text-white" for="skills">skills:</label>
+        <mat-form-field appearance="fill" class="w-full">
+            <mat-label for="skills">skills</mat-label>
+            <mat-select id="skills" formControlName="skills">
+                <mat-option value="access">Access </mat-option>
+                <mat-option value="denied">Denied</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <!-- project  -->
+    <div class="flex flex-col gap-4">
+        <label class=" !text-white" for="project">project:</label>
+        <mat-form-field appearance="fill" class="w-full">
+            <mat-label for="project">project</mat-label>
+            <mat-select id="project" formControlName="project">
+                <mat-option value="access">Access </mat-option>
+                <mat-option value="denied">Denied</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <!-- users  -->
+    <div class="flex flex-col gap-4">
+        <label class=" !text-white" for="users">users:</label>
+        <mat-form-field appearance="fill" class="w-full">
+            <mat-label for="users">users</mat-label>
+            <mat-select id="users" formControlName="users">
+                <mat-option value="access">Access </mat-option>
+                <mat-option value="denied">Denied</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <!-- command  -->
+    <div class="flex flex-col gap-4">
+        <label class=" !text-white" for="command">command:</label>
+        <mat-form-field appearance="fill" class="w-full">
+            <mat-label for="command">command</mat-label>
+            <mat-select id="command" formControlName="command">
+                <mat-option value="access">Access </mat-option>
+                <mat-option value="denied">Denied</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <!-- Submit and Cancel Buttons -->
+    <div class="flex gap-4 self-end mt-6">
+        <button class="bg-blue-500 text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-600 transition">{{isEdit ?
+            'Update' :
+            'Add'}}
+        </button>
+        <button type="button"
+            class="border border-blue-500 text-blue-500 px-6 py-3 rounded-md shadow-md hover:bg-blue-100 transition"
+            matDialogClose="true">
+            Cancel
+        </button>
+    </div>
+</form>

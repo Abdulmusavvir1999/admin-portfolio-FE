@@ -1,0 +1,136 @@
+<section class="pb-8 px-4" id="users">
+    <div class="flex flex-wrap items-center justify-between py-3 ">
+        <!-- Heading -->
+        <p class="text-4xl font-bold italic text-gray-900 mb-2 ">Users</p>
+        <button (click)="openAddUserDialog()"
+            class="text-lg text-white bg-gradient-to-r from-green-400 to-teal-500 py-3 px-6 rounded-full font-bold shadow-lg">Add
+            User</button>
+    </div>
+    <hr class="h-1 rounded-lg bg-gradient-to-r from-green-400 to-blue-500 mb-2">
+
+    <!-- Add User Button -->
+
+    <!-- Table -->
+    <div class="overflow-x-auto w-full mt-4">
+        <table class="w-full bg-white border border-gray-300 rounded-lg shadow-lg">
+            <thead class="bg-gradient-to-r from-green-400 to-blue-500 text-white">
+                <tr>
+                    <th class="py-4 px-6 text-left">ID</th>
+                    <th class="py-4 px-6 text-left">Email</th>
+                    <th class="py-4 px-6 text-left">Password</th>
+                    <th class="py-4 px-6 text-left">Admin</th>
+                    <th class="py-4 px-6 text-left">About</th>
+                    <th class="py-4 px-6 text-left">Education & Experience</th>
+                    <th class="py-4 px-6 text-left">Skills</th>
+                    <th class="py-4 px-6 text-left">Project</th>
+                    <th class="py-4 px-6 text-left">Users</th>
+                    <th class="py-4 px-6 text-left">Command</th>
+                    <th class="py-4 px-6 text-left">Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @for (item of userArray; track $index) {
+                <tr class="border-b border-gray-300 hover:bg-gray-100 transition-colors">
+                    <td class="py-3 px-6">{{item.user_id}}</td>
+                    <!-- email -->
+                    <td class="py-3 px-6 text-blue-600">{{item.email}}</td>
+                    <!-- change Password -->
+                    <td> <button
+                            class="text-sm font-semibold py-2 px-4 text-red-500 bg-red-100 rounded-lg hover:bg-red-300 transition duration-200"
+                            (click)="openEditUserPasswordDialog(item.user_id)">Change Password</button>
+                    </td>
+                    <!-- role -->
+                    <td class="py-3 px-6 text-green-600">{{item.role}}</td>
+                    <!-- about -->
+                    <td class="py-3 px-6 text-blue-600">
+                        @if (item.about === "access") {
+
+                        <p
+                            class="bg-green-100 text-green-600 font-semibold w-24 py-2 rounded-lg shadow-lg shadow-green-200">
+                            {{item.about}}</p>
+                        }
+                        @else {
+                        <p class="bg-red-100 text-red-600 font-semibold w-24 py-2 rounded-lg shadow-lg shadow-red-200">
+                            {{item.about}}</p>
+                        }
+                    </td>
+                    <!-- education & experience -->
+                    <td class="py-3 px-6 text-blue-600">
+                        @if (item.education_experience === "access") {
+
+                        <p
+                            class="bg-green-100 text-green-600 font-semibold w-24 py-2 rounded-lg shadow-lg shadow-green-200">
+                            {{item.education_experience}}</p>
+                        }
+                        @else {
+                        <p class="bg-red-100 text-red-600 font-semibold w-24 py-2 rounded-lg shadow-lg shadow-red-200">
+                            {{item.education_experience}}</p>
+                        }
+                    </td>
+                    <!-- skills -->
+                    <td class="py-3 px-6 text-blue-600">
+                        @if (item.skills === "access") {
+
+                        <p
+                            class="bg-green-100 text-green-600 font-semibold w-24 py-2 rounded-lg shadow-lg shadow-green-200">
+                            {{item.skills}}</p>
+                        }
+                        @else {
+                        <p class="bg-red-100 text-red-600 font-semibold w-24 py-2 rounded-lg shadow-lg shadow-red-200">
+                            {{item.skills}}</p>
+                        }
+                    </td>
+                    <!-- project -->
+                    <td class="py-3 px-6 text-blue-600">
+                        @if (item.project === "access") {
+
+                        <p
+                            class="bg-green-100 text-green-600 font-semibold w-24 py-2 rounded-lg shadow-lg shadow-green-200">
+                            {{item.project}}</p>
+                        }
+                        @else {
+                        <p class="bg-red-100 text-red-600 font-semibold w-24 py-2 rounded-lg shadow-lg shadow-red-200">
+                            {{item.project}}</p>
+                        }
+                    </td>
+                    <!-- users -->
+                    <td class="py-3 px-6 text-blue-600">
+                        @if (item.users === "access") {
+
+                        <p
+                            class="bg-green-100 text-green-600 font-semibold w-24 py-2 rounded-lg shadow-lg shadow-green-200">
+                            {{item.users}}</p>
+                        }
+                        @else {
+                        <p class="bg-red-100 text-red-600 font-semibold w-24 py-2 rounded-lg shadow-lg shadow-red-200">
+                            {{item.users}}</p>
+                        }
+                    </td>
+                    <!-- command -->
+                    <td class="py-3 px-6 text-blue-600">
+                        @if (item.command === "access") {
+
+                        <p
+                            class="bg-green-100 text-green-600 font-semibold w-24 py-2 rounded-lg shadow-lg shadow-green-200">
+                            {{item.command}}</p>
+                        }
+                        @else {
+                        <p class="bg-red-100 text-red-600 font-semibold w-24 py-2 rounded-lg shadow-lg shadow-red-200">
+                            {{item.command}}</p>
+                        }
+                    </td>
+                    <td class="py-3 px-6 flex justify-center items-stretch gap-4">
+                        <div class="flex flex-wrap gap-6 justify-between p-4 bg-gray-100 border-t border-gray-300">
+                            <button (click)="openEditUserDialog(item)"
+                                class="text-lg font-semibold py-2 px-4 text-teal-700 bg-teal-200 rounded-lg hover:bg-teal-300 transition duration-200">Edit</button>
+                            <button (click)="openDeleteUserDialog(item.user_id)"
+                                class="text-lg font-semibold py-2 px-4 text-red-700 bg-red-200 rounded-lg hover:bg-red-300 transition duration-200">Delete</button>
+                        </div>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>

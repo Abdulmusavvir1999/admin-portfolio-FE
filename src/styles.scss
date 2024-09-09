@@ -1,1 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+    // width: 100%;
+    // overflow-x: hidden;
+}
+
+body {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    color: rgb(229 231 235) !important;
+
+    background-color: rgb(17 24 39) !important;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-floating-label {
+    color: rgb(229 231 235) !important;
+}
+
+div.mat-mdc-select-panel {
+
+    background-color: rgb(17 24 39) !important;
+}
+
+div.mat-mdc-select-panel .mat-mdc-option {
+    color: rgb(229 231 235) !important;
+
+}
+
+.mat-mdc-select-value-text {
+    color: rgb(229 231 235) !important;
+
+}

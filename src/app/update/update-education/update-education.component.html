@@ -1,0 +1,48 @@
+<form class="flex flex-col !text-white !italic overflow-auto bg-gray-900 p-7 rounded-lg shadow-lg"
+    [formGroup]="educationForm" (ngSubmit)="educationForm.valid && addOrUpdate()">
+
+    <!--degree  -->
+    <div class="flex flex-col gap-4 mb-4">
+        <label class="text-xl font-semibold text-gray-200" for="degree">Degree:</label>
+        <input formControlName="degree" type="text"
+            class="input px-4 py-2 rounded-md placeholder:text-gray-400 bg-gray-800 border border-gray-600" id="degree"
+            placeholder="Degree*" />
+    </div>
+
+    <!--University  -->
+    <div class="flex flex-col gap-4 mb-4">
+        <label class="text-xl font-semibold text-gray-200" for="university">University:</label>
+        <input formControlName="university" type="text"
+            class="input px-4 py-2 rounded-md placeholder:text-gray-400 bg-gray-800 border border-gray-600"
+            id="university" placeholder="university*" />
+    </div>
+
+    <!-- year -->
+    <div class="flex flex-col gap-4 mb-4">
+        <label class="text-xl font-semibold text-gray-200" for="year">Year:</label>
+        <input formControlName="year" type="text"
+            class="input px-4 py-2 rounded-md placeholder:text-gray-400 bg-gray-800 border border-gray-600" id="year"
+            placeholder="Start To End*" />
+    </div>
+
+    <!-- description -->
+    <div class="flex flex-col gap-4 mb-4">
+        <label class="text-xl font-semibold text-gray-200" for="description">Description:</label>
+        <textarea formControlName="description" type="description"
+            class="input px-4 py-2 rounded-md placeholder:text-gray-400 bg-gray-800 border border-gray-600"
+            id="description" placeholder="Description*" rows="4"></textarea>
+    </div>
+
+    <!-- Submit and Cancel Buttons -->
+    <div class="flex gap-4 self-end mt-6">
+        <button class="bg-blue-500 text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-600 transition">{{isEdit ?
+            'Update' :
+            'Add'}}
+        </button>
+        <button type="button"
+            class="border border-blue-500 text-blue-500 px-6 py-3 rounded-md shadow-md hover:bg-blue-100 transition"
+            matDialogClose="true">
+            Cancel
+        </button>
+    </div>
+</form>
